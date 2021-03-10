@@ -1,0 +1,29 @@
+$height: 10;
+$main-height: 80;
+@mixin heights {
+  @each $h in $height {
+    &--height-#{$h} {
+      height: #{$h}vh;
+    }
+  }
+}
+.hide {
+  display: none;
+}
+
+.el {
+  &--height-full {
+    height: 100%;
+  }
+  @include heights;
+  &--min-heihgt-#{$main-height} {
+    min-height: #{$main-height}vh;
+  }
+  &--hide-arrows {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
